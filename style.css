@@ -4,6 +4,26 @@
     padding: 0;
 }
 
+.body{
+    height: 100vh;
+}
+
+h3{
+    color: white;
+}
+
+.music_info p, .duration p{
+    color: white;
+}
+
+.background{
+    background-color: slategrey;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
 form{
     display: flex;
     flex-direction: column;
@@ -26,12 +46,23 @@ button{
     width: 50px;
 }
 
+i{
+    color:midnightblue;
+}
+
+.flex_volume{
+    display: flex;
+    justify-content: center;
+}
+
 .volume{
     padding: 0 15px;
-    width: 60%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
 }
 .volume input{
-    width: 60%;
+    width: 50%;
 }
 .progression_music{
     display: flex;
@@ -62,13 +93,75 @@ img{
 .music_card{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .card{
-    margin: 20px auto;
+    width: 10rem;
+    margin: 10px auto;
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+}
+
+.card-title{
+    font-size: 15px;
 }
 
 .card img{
     padding: 5px;
     border-radius: 10px ;
+}
+
+.btn{
+    border: none;
+}
+.btn:hover{
+    background-color:cadetblue;
+}
+
+
+@media  screen and (min-width : 720px) {
+    form i{
+        font-size: 40px;
+    }
+    .card{
+        width: 14rem;
+        margin: 20px auto;
+    }
+    .card i{
+        font-size: 30px;
+    }
+    .card-body{
+        font-size: 15px;
+    }
+    h5{
+        font-size: 20px;
+    }
+}
+
+@media  screen and (min-width : 980px) {
+    .music_card{
+        flex-direction: column;
+        align-items: center;
+    }
+    .card{
+        width: 80%;
+        flex-direction: row;
+    }
+    .card-body{
+        align-items: baseline;
+    }
+    .card img{
+        width: 25%;
+        align-self: flex-start;
+    }
+    .card i{
+        font-size: 50px;
+    }
 }

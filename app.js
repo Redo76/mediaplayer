@@ -77,9 +77,13 @@ btnPlay.addEventListener("click", () =>{
     if (!playing) {
         audio.play();
         playing = true;
+        btnPlay.children[0].classList.remove("fa-play");
+        btnPlay.children[0].classList.add("fa-pause");
     } else {
         audio.pause();
-        playing = false
+        playing = false;
+        btnPlay.children[0].classList.remove("fa-pause");
+        btnPlay.children[0].classList.add("fa-play");
     }
 })
 
@@ -168,8 +172,8 @@ function displayCard() {
         let clone = document.importNode(template.content, true);
         
         let img = clone.querySelector(".card-img-top");
-        let artist = clone.querySelector(".card-title");
-        let title = clone.querySelector(".card-artist");
+        let artist = clone.querySelector(".card-artist");
+        let title = clone.querySelector(".card-title");
         let btn = clone.querySelector(".card_play");
         let icone = clone.querySelector(".fa-play")
         
@@ -177,8 +181,8 @@ function displayCard() {
         
         title.textContent = musics[i].name;
         
-        
         artist.textContent = musics[i].artist;
+        
         
         btn.dataset.index = i;
         icone.dataset.index = i;
@@ -190,7 +194,8 @@ function displayCard() {
             audio.src = musics[audioIndex].URLmusic;
             audio.load();
             playing = true;
-            
+            btnPlay.children[0].classList.remove("fa-play");
+            btnPlay.children[0].classList.add("fa-pause");
         })
     }
 }
